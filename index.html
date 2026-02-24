@@ -31,6 +31,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            overflow-y: scroll; /* 탭 전환 시 스크롤바 유무로 인한 너비 변화 방지 */
         }
         .container {
             width: 100%;
@@ -96,7 +97,7 @@
             background: var(--bg-color); 
         }
         .tab-content.active { display: flex; flex-direction: column; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } /* 위치 이동 제거하여 흔들림 방지 */
 
         /* Card-Based UI Forms */
         .form-group { 
@@ -644,7 +645,7 @@
     </div>
 
     <div class="app-footer">
-        &copy; 2026. All rights reserved.<br>본 도구는 크몽(Kmong) 상담 및 거래 전용이며, 외부 직거래를 유도하지 않습니다.
+        &copy; 2026. All rights reserved.<br>본 도구는 스마트스토어 상담 및 거래 전용입니다.
     </div>
 </div>
 
@@ -654,11 +655,11 @@
         <h3 style="margin:0 0 10px;">견적서 복사 완료! 📋</h3>
         <p style="font-size:14px; color:var(--text-sub); line-height: 1.6;">
             견적 내용이 클립보드에 <strong>복사되었습니다.</strong><br>
-            이제 <strong>크몽 서비스 페이지</strong>로 돌아가서<br>
-            <strong>[전문가에게 문의하기]</strong> 창에 내용을<br>
+            이제 <strong>네이버 톡톡</strong>으로 돌아가서<br>
+            <strong>[문의하기]</strong> 창에 내용을<br>
             <strong>붙여넣고 전체 최종견적 내용을 확인 후 전송해주세요.</strong>
         </p>
-        <a href="https://kmong.com" target="_blank" class="modal-btn" style="display:block; text-decoration:none; box-sizing:border-box; text-align:center;" onclick="setTimeout(() => document.getElementById('resultModal').classList.remove('visible'), 300)">확인 (크몽으로 이동)</a>
+        <a href="https://talk.naver.com/ct/여기에_본인_톡톡아이디_입력" target="_blank" class="modal-btn" style="display:block; text-decoration:none; box-sizing:border-box; text-align:center;" onclick="setTimeout(() => document.getElementById('resultModal').classList.remove('visible'), 300)">확인 (네이버 톡톡으로 이동)</a>
     </div>
 </div>
 
